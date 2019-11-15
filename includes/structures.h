@@ -29,32 +29,32 @@ typedef struct	s_mlx
 	t_img		img;
 }				t_mlx;
 
-typedef struct	s_vectord3_1
+typedef struct	s_vector3d
 {
 	double		x;
 	double		y;
 	double		z;
-}				t_vectd3_1;
+}				t_vect3d;
 
-typedef struct	s_vectori3_1
+typedef struct	s_vector3
 {
 	int			x;
 	int			y;
 	int			z;
-}				t_vecti3_1;
+}				t_vect3i;
 
 typedef struct	s_plane
 {
-	t_vecti3_1	color;
-	t_vectd3_1	origin;
-	t_vectd3_1	dir;
+	t_vect3i	color;
+	t_vect3d	origin;
+	t_vect3d	dir;
 }				t_plane;
 
 typedef struct	s_shpere
 {
 	double		radius;
-	t_vecti3_1	color;
-	t_vectd3_1	center;
+	t_vect3i	color;
+	t_vect3d	center;
 
 }				t_shpere;
 
@@ -62,34 +62,50 @@ typedef struct	s_cylinder
 {
 	double		length;
 	double		radius;
-	t_vecti3_1	color;
-	t_vectd3_1	center;
-	t_vectd3_1	dir;
+	t_vect3i	color;
+	t_vect3d	center;
+	t_vect3d	dir;
 }				t_cylinder;
 
 typedef struct	s_cone
 {
 	double		length;
 	double		radius;
-	t_vecti3_1	color;
-	t_vectd3_1	center;
-	t_vectd3_1	dir;
+	t_vect3i	color;
+	t_vect3d	center;
+	t_vect3d	dir;
 }				t_cone;
 
 typedef struct	s_square
 {
 	double		length;
-	t_vecti3_1	color;
-	t_vectd3_1	origin;
-	t_vectd3_1	dir;
+	t_vect3i	color;
+	t_vect3d	origin;
+	t_vect3d	dir;
 }				t_square;
 
 typedef struct	s_triangle
 {
-	t_vecti3_1	color;
-	t_vectd3_1	a;
-	t_vectd3_1	b;
-	t_vectd3_1	c;
+	t_vect3i	color;
+	t_vect3d	a;
+	t_vect3d	b;
+	t_vect3d	c;
 }				t_triangle;
+
+typedef union	u_object
+{
+	t_plane		plane;
+	t_shpere	sphere;
+	t_cylinder	cylinder;
+	t_cone		cone;
+	t_square	square;
+	t_triangle	triangle;
+}				t_obj;
+
+typedef struct	s_object
+{
+	int			type;
+	t_obj		obj;
+}				t_object;
 
 #endif
