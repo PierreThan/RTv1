@@ -47,7 +47,7 @@ typedef struct	s_plane
 {
 	t_vecti3_1	color;
 	t_vectd3_1	origin;
-	t_vectd3_1	orientation;
+	t_vectd3_1	dir;
 }				t_plane;
 
 typedef struct	s_shpere
@@ -64,7 +64,7 @@ typedef struct	s_cylinder
 	double		radius;
 	t_vecti3_1	color;
 	t_vectd3_1	center;
-	t_vectd3_1	orientation;
+	t_vectd3_1	dir;
 }				t_cylinder;
 
 typedef struct	s_cone
@@ -73,7 +73,7 @@ typedef struct	s_cone
 	double		radius;
 	t_vecti3_1	color;
 	t_vectd3_1	center;
-	t_vectd3_1	orientation;
+	t_vectd3_1	dir;
 }				t_cone;
 
 typedef struct	s_square
@@ -81,7 +81,7 @@ typedef struct	s_square
 	double		length;
 	t_vecti3_1	color;
 	t_vectd3_1	origin;
-	t_vectd3_1	orientation;
+	t_vectd3_1	dir;
 }				t_square;
 
 typedef struct	s_triangle
